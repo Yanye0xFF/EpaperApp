@@ -1,0 +1,82 @@
+<resources>
+    <string name="app_name">蓝牙标签</string>
+
+    <!--    MainActivity-->
+    <string name="nav_tag">天气站</string>
+    <string name="nav_paint">画板</string>
+    <string name="nav_settings">设置</string>
+    <string name="title_no_connect">未连接设备</string>
+    <string name="toast_ble_connect">蓝牙已连接</string>
+    <string name="toast_ble_disconnect">蓝牙已断开</string>
+
+    <string name="main_permission_title">权限请求</string>
+    <string name="main_permission_location_alert">安卓6.0及以上蓝牙功能需要定位权限才能运行，请在设置中打开定位权限。</string>
+
+    <!--    input dialog-->
+    <string name="option_confirm">确认</string>
+    <string name="option_cancel">取消</string>
+
+    <!--    device scan popup-view-->
+    <string name="title_scanning">正在扫描蓝牙标签</string>
+    <string name="title_select">选择蓝牙标签</string>
+    <string name="subtitle_device">可用设备</string>
+
+    <!--    connect popup dialog-->
+    <string name="common_connect">连接</string>
+    <string name="common_device_connect">设备连接</string>
+    <string name="common_re_connect">重连</string>
+    <string name="common_cancel">取消</string>
+    <string name="common_set">设置 </string>
+    <string name="common_connecting">连接中</string>
+    <string name="common_finding_service">正在发现服务</string>
+    <string name="common_disconnected">连接已断开</string>
+    <string name="common_sure">确定</string>
+    <string name="profile_no_services_found">没有发现对应服务</string>
+
+    <!--    TagFragment-->
+
+    <!--    PaintFragment-->
+    <string name="import_picture">导入图片</string>
+    <string name="export_picture">导出图片</string>
+    <string name="send_to_epaper">发送到标签</string>
+    <string name="pull_from_epaper">接收标签图片</string>
+    <string name="mod_color">屏幕颜色</string>
+    <string name="mod_type">二值化类型</string>
+
+    <!--    SettingsFragment-->
+    <string name="title_beacon">广播间隔</string>
+    <string name="sub_title_beacon">间隔小容易被手机搜索，间隔大价签省电</string>
+
+    <string name="title_ble_name">蓝牙名称</string>
+    <string name="subtitle_ble_name">最多9个汉字或28个英文</string>
+
+    <string name="title_folder_empty">这里没有文件&#8230;</string>
+    <string name="title_file_path_default">请先选择升级文件</string>
+
+    <string name="title_binary_update">固件升级</string>
+    <string name="title_update_notice">升级过程中请不要断开蓝牙</string>
+    <string name="title_update_progress">正在格式化Flash: %d%%</string>
+
+    <string name="title_select_binary">选择固件</string>
+    <string name="title_start_upgrade">开始升级</string>
+
+    <string name="hint_ble_mac_addr">蓝牙MAC地址</string>
+    <string name="title_scan_barcode">扫描条形码</string>
+    <string name="title_reboot_epaper">重启价签</string>
+    <string name="title_app_version">版本号: 2.9-专业版</string>
+    <string name="title_app_build">编译日期: 2022年6月25日</string>
+
+    <!--    UcropActivity-->
+    <string name="ucrop_label_original">Original</string>
+    <string name="ucrop_label_edit_photo">图片剪裁</string>
+
+    <string name="ucrop_menu_crop">Crop</string>
+
+    <string name="ucrop_error_input_data_is_absent" translatable="false">Both input and output Uri must be specified</string>
+    <string name="ucrop_mutate_exception_hint" translatable="false">Therefore, override color resource (ucrop_color_toolbar_widget) in your app to make it work on pre-L devices</string>
+
+    <string name="ucrop_rotate">旋转</string>
+    <string name="ucrop_scale">缩放</string>
+    <string name="ucrop_crop">确定</string>
+
+</resources>

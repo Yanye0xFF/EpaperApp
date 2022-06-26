@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/connect_line"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:background="@drawable/add_beacon">
+
+    <LinearLayout
+        android:id="@+id/img_connect_line"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/img_phone"
+            android:layout_width="40dp"
+            android:layout_height="60dp"
+            android:src="@mipmap/ic_scan_phone" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <com.demo.epaper.view.DottedProgressBar
+                android:id="@+id/connect_progress_bar"
+                android:layout_width="70dp"
+                android:layout_height="0dp"
+                android:layout_centerInParent="true"
+                app:activeDot="@drawable/active_dot"
+                app:dotSize="10dp"
+                app:inactiveDot="@drawable/inactive_dot"
+                app:jumpingSpeed="200"
+                app:spacing="2dp">
+            </com.demo.epaper.view.DottedProgressBar>
+
+            <ImageView
+                android:id="@+id/img_disconnect"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/ic_connect_failed"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/connect_status_img"
+            android:layout_width="40dp"
+            android:layout_height="60dp"
+            android:src="@mipmap/ic_bluetooth_device" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/find_service_line"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal"
+        android:visibility="invisible">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top">
+
+            <RelativeLayout
+                android:id="@+id/layout_search"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom">
+
+                <ImageView
+                    android:id="@+id/img_service0"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/ic_service" />
+
+                <ImageView
+                    android:id="@+id/img_service1"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:src="@mipmap/ic_service" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/img_search"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:src="@mipmap/ic_search" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/connect_status_text"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/img_connect_line"
+        android:layout_centerHorizontal="true"
+        android:textColor="?attr/colorAccent"
+        android:textSize="16sp" />
+
+</RelativeLayout>

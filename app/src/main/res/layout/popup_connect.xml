@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="150dp"
+    android:layout_height="100dp"
+    android:orientation="vertical"
+    android:background="@drawable/bg_popup_window">
+
+    <TextView
+        android:id="@+id/tv_qr_connect"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?android:attr/selectableItemBackground"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:text="扫一扫"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#00ae9d"/>
+
+    <TextView
+        android:id="@+id/tv_recent_connect"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?android:attr/selectableItemBackground"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:text="上次设备"/>
+
+</LinearLayout>

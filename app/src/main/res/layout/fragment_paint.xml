@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.PaintFragment">
+
+    <com.demo.epaper.view.PixelView
+        android:id="@+id/paint_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.demo.epaper.view.PixelView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <SeekBar
+                android:id="@+id/seek_brush_size"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:progressTint="@color/seekProgressTint"
+                android:thumbTint="@color/seekThumbTint"
+                android:max="10"
+                android:progress="1" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_brush"
+                android:layout_width="match_parent"
+                android:layout_height="70dp">
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <Button
+                android:id="@+id/btn_pull"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#7bbfea"
+                android:text="@string/pull_from_epaper">
+            </Button>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_import"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:text="@string/import_picture"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="#f3715c"
+                    android:layout_marginStart="10dp">
+                </Button>
+
+                <Button
+                    android:id="@+id/btn_export"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:text="@string/export_picture"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="#9b95c9"
+                    android:layout_marginEnd="10dp">
+                </Button>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/image_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:text="@string/mod_color">
+                </TextView>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <com.demo.epaper.view.ColorView
+                        android:id="@+id/color_view_bw"
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        app:color_type="0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/color_view_rw"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
+                    </com.demo.epaper.view.ColorView>
+
+                    <com.demo.epaper.view.ColorView
+                        android:id="@+id/color_view_rw"
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        app:color_type="1"
+                        app:layout_constraintStart_toEndOf="@+id/color_view_bw"
+                        app:layout_constraintEnd_toStartOf="@+id/color_view_bwr"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
+                    </com.demo.epaper.view.ColorView>
+
+                    <com.demo.epaper.view.ColorView
+                        android:id="@+id/color_view_bwr"
+                        android:layout_width="90dp"
+                        android:layout_height="30dp"
+                        app:color_type="2"
+                        app:layout_constraintStart_toEndOf="@+id/color_view_rw"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
+                    </com.demo.epaper.view.ColorView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:text="@string/mod_type">
+                </TextView>
+
+                <RadioGroup
+                    android:id="@+id/binary_radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <!--        高斯卷积-->
+                    <RadioButton
+                        android:id="@+id/radio_fuse"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="轮廓">
+                    </RadioButton>
+
+                    <!--        Bayer抖动-->
+                    <RadioButton
+                        android:id="@+id/radio_bayer"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="图案">
+                    </RadioButton>
+
+                    <!--        Floyd-Steinberg-->
+                    <RadioButton
+                        android:id="@+id/radio_floyd"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="扩散">
+                    </RadioButton>
+
+                    <!--        ostu动态阈值-->
+                    <RadioButton
+                        android:id="@+id/radio_gray"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="纯色">
+                    </RadioButton>
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_original"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@android:color/white"
+                        android:backgroundTint="#8a8c8e"
+                        android:text="原图">
+                    </Button>
+
+                    <Button
+                        android:id="@+id/btn_confirm"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:textColor="@android:color/white"
+                        android:backgroundTint="#45b97c"
+                        android:text="完成">
+                    </Button>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_upload"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#faa755"
+                android:text="@string/send_to_epaper">
+            </Button>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

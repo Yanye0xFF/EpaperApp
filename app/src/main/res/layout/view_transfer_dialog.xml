@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_progress"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_message_dialog"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/transfer_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/black"
+        android:layout_margin="10dp"
+        android:textSize="18sp">
+    </TextView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@android:color/darker_gray">
+    </View>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_phone"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:srcCompat="@mipmap/ic_phone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/transfer_indicator"
+            android:layout_weight="1">
+        </androidx.appcompat.widget.AppCompatImageView>
+
+        <com.demo.epaper.view.AVLoadingIndicator.AVLoadingIndicatorView
+            android:id="@+id/transfer_indicator"
+            android:layout_width="48dip"
+            android:layout_height="48dip"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_phone"
+            app:layout_constraintEnd_toStartOf="@+id/iv_epaper"
+            android:layout_weight="1"
+            style="@style/AVLoadingIndicatorView"
+            android:visibility="visible"
+            app:indicatorColor="#426ab3">
+        </com.demo.epaper.view.AVLoadingIndicator.AVLoadingIndicatorView>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_epaper"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:srcCompat="@mipmap/ic_epaper"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/transfer_indicator"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_weight="1">
+        </androidx.appcompat.widget.AppCompatImageView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.demo.epaper.view.NumberProgressBar
+        android:id="@+id/transfer_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transfer_indicator"
+        style="@style/NumberProgressBar_Default">
+    </com.demo.epaper.view.NumberProgressBar>
+
+</LinearLayout>
