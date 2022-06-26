@@ -1,5 +1,5 @@
 # EpaperApp
- epaper app source code
+ epaper-tag app source code
 ## Usage
 clone this project and import into AndroidStudio.
 ## Documents
